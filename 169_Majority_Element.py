@@ -1,4 +1,4 @@
-import math
+#Booyer Moore Voting Algo
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         candidaite = None
@@ -13,4 +13,5 @@ class Solution:
                 count-=1
 
         return candidaite
+
         
