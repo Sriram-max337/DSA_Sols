@@ -1,10 +1,9 @@
-nums = [1,1,1,2,2,3]
-#we need to keep only 2 occurences of every ele
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        k=0
+        for num in nums:
+            if k<2 or num!=nums[k-2]:
+                nums[k]=num
+                k+=1
 
-k=0
-for num in nums:
-    if num!=nums[k-2]:
-        nums[k]=num
-        k+=1
-
-print(k)
+        return k
