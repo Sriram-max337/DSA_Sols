@@ -13,5 +13,12 @@ class Solution:
                 count-=1
 
         return candidaite
-
         
+#Optimised -> Using Hashing (Collections module -> Counter)
+from collections import Counter
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count = Counter(nums)
+        return max(count, key=count.get)
+        
+
