@@ -1,14 +1,18 @@
-def missing_no(nums):
-    n = len(nums)
-    hashset = set()
+#Oour logic, unoptimised -> O(n)
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        for i in range(len(nums)+1):
+            if i not in nums:
+                return i
 
-    for num in nums:
-        hashset.add(num)
+#Optimised -> O(1) Hashing
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        hashset = set()
 
-    for i in range(n+1):
-        if i not in hashset:
-            print(i)
-            return i
-            
-        
-missing_no([3,0,1])
+        for num in nums:
+            hashset.add(num)
+
+        for i in range(len(nums)+1):
+            if i not in hashset:
+                return i
