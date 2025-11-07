@@ -1,27 +1,17 @@
-s,t = "b","abc"
-j=0
+#Optimised -> 2Pointers
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        j=0
 
-if len(s)==0:
-    print(True)
+        if len(s)==0:
+            return True
 
-for i in range(len(s)):
-    if s[j]==t[i]:
-        j+=1
+        for i in range(len(t)):
+            if s[j]==t[i]:
+                j+=1
+            if j==len(s):
+                return True
+                break
+        return False
 
-print(j==len(s))
-
-s,t = "b","abc"
-j=0
-
-if len(s)==0:
-    print(True)
-
-for i in range(len(s)):
-    if s[j]==t[i]:
-        j+=1
-    if j==len(s):
-        print(True)
-        break
-
-print(False)
-
+        return j==len(s)
