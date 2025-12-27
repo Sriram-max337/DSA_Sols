@@ -1,9 +1,9 @@
 from collections import defaultdict
-strs = ["eat","tea","tan","ate","nat","bat"]
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        lst = defaultdict(list)
+        for s in strs:
+            lst["".join(sorted(s))].append(s)
 
-lst = defaultdict(list)
-
-for s in strs:
-    lst["".join(sorted(s))].append(s)
-
-print(list(lst.values()))
+        return list(lst.values())
+    
