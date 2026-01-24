@@ -1,5 +1,8 @@
-s = "  hello world  "
-s.strip()
-print(s)
-print(s.split())
-print(" ".join(s.split()[::-1]))
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return " ".join(s.strip().split()[::-1])
+    
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return " ".join(reversed(s.split()))
