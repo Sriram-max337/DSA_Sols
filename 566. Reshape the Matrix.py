@@ -5,7 +5,3 @@ m = len(mat)
 n = len(mat[0])
 eles = []
 
-for i in range(len(mat)):
-    eles.append(*mat[i])
-
-print(eles)
