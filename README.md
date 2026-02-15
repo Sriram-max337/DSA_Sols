@@ -8,6 +8,7 @@
 
 ## 🔥 Latest Solved
 - test
+- new_test
 - Q1. 1929 Concatenation of Array
 - Main
 - 977. Squares of a Sorted Array
@@ -16,7 +17,6 @@
 - 867. Transpose Matrix
 - 860. Lemonade Change
 - 80_Remove_Duplicates_from_Sorted_Array_II
-- 744. Find Smallest Letter Greater Than Target
 
 ---
 _auto updated by psycho automation system 😏_
