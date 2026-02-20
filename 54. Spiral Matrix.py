@@ -1,15 +1,30 @@
-matrix = [[1,2,3],
-          [4,5,6],
-          [7,8,9]]
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        spiral_mat = []
+        rows = len(matrix)
+        cols = len(matrix[0])
+        top = 0
+        bottom = rows - 1
+        right = cols -1
+        left = 0
 
-m = len(matrix)
-n = len(matrix[0])
+        while top<=bottom and left<=right:
+            for i in range(left, right+1):
+                spiral_mat.append(matrix[top][i])
+            top+=1
 
-ans = []
+            for j in range(top, bottom+1):
+                spiral_mat.append(matrix[j][right])
+            right-=1
 
-for i in range(len(matrix)):
-    print(f"row {i+1} : {matrix[i]}")
-    print(f"col {i+1} : {[matrix[0][0], matrix[1][i], matrix[2][i]]}")
-    print()
+            if top<=bottom:
+                for k in range(right, left-1, -1):
+                    spiral_mat.append(matrix[bottom][k])
+                bottom-=1
 
-    
+            if left<=right:
+                for l in range(bottom, top-1, -1):
+                    spiral_mat.append(matrix[l][left])
+                left+=1
+
+        return spiral_mat
