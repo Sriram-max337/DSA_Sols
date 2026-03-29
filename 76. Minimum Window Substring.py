@@ -1,3 +1,26 @@
+#Brute force
+from collections import Counter
+
+s = "ADOBECODEBANC"
+t = "ABC"
+min_len = float("inf")
+ans = ""
+ct = Counter(t)
+hmt = set(t)
+
+for i in range(len(s)):
+    for j in range(i,len(s)):
+        sub_str = s[i:j+1]
+        cs = Counter(sub_str)
+
+        if all(cs[char] >=  ct[char] for char in ct):
+            if len(sub_str) < min_len:
+                min_len = len(sub_str)
+                ans = sub_str
+
+print(ans)
+
+#Optimised
 from collections import Counter
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
