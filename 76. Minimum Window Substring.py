@@ -20,7 +20,7 @@ for i in range(len(s)):
 
 print(ans)
 
-#Optimised
+#Optimized
 from collections import Counter
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
