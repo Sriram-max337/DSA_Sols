@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def check_nodes(self, l, r):
         if not l and not r:
