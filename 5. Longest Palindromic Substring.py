@@ -9,8 +9,9 @@ class Solution:
             while l>=0 and r<len(s):
                 if s[l] == s[r]:
                     if len(s[l:r+1]) > max_len:
-                        max_len = max(max_len, len(s[l:r+1]))
                         res = s[l:r+1]
+                    max_len = max(max_len, len(s[l:r+1]))
+                    
                     l-=1
                     r+=1
                 else:
@@ -23,8 +24,9 @@ class Solution:
             while l>=0 and r<len(s):
                 if s[l] == s[r]:
                     if len(s[l:r+1]) > max_len:
-                        max_len = max(max_len, len(s[l:r+1]))
                         res = s[l:r+1]
+                    max_len = max(max_len, len(s[l:r+1]))
+                    
                     l-=1
                     r+=1
                 else:
