@@ -33,3 +33,36 @@ class Solution:
                     dfs(i, j)
 
         return perim
+
+class Solution:
+    def islandPerimeter(self, grid: list[list[int]]) -> int:
+        
+        rows = len(grid)
+        cols = len(grid[0])
+        perim = 0
+
+        def bfs(grid, r, c):
+            nonlocal perim
+            visited = set([(r,c)])
+            queue = deque([(r,c)])
+
+            while queue:
+                r,c = queue.popleft()
+
+                for dr, dc in [(1,0),(-1,0),(0,1),(0,-1)]:
+                    nr, nc = r+dr, c+dc
+
+                    if not (0<= nr < rows and 0<= nc < cols) or grid[nr][nc] == 0:
+                        perim += 1
+
+                    if 0<= nr < rows and 0<= nc < cols and (nr, nc) not in visited and grid[nr][nc] == 1:
+                        visited.add((nr,nc))
+                        queue.append((nr,nc))
+
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == 1:
+                    bfs(grid, i, j)
+                    return perim
+
+        return perim
